@@ -1,0 +1,13 @@
+
+---
+
+## ✅ Tips
+
+- Use **`sklearn`** for model implementation.
+- Consider **undersampling** or **SMOTE** for handling class imbalance.
+- Log metrics using **MLflow** or save in `.json` for analysis.
+- Push regularly with clear commit messages like `"Add SVM training and ROC curve generation"`.
+
+---
+
+If you want, I can generate the initial code files (`train_svm.py`, `train_dt.py`, etc.) for you — just say the word.
