@@ -2,6 +2,7 @@
 
 import matplotlib.pyplot as plt
 from sklearn.svm import SVC
+from sklearn.svm import LinearSVC
 from sklearn.metrics import (
     accuracy_score,
     confusion_matrix,
@@ -12,12 +13,12 @@ from sklearn.metrics import (
 from data_processing import load_data, preprocess_data, split_data
 
 # === 1. Load and preprocess data ===
-df = load_data("your_dataset.csv")  # Change to your dataset filename
+df = load_data("creditcards.csv")  # Change to your dataset filename
 X, y = preprocess_data(df, target_column="label")  # Change 'label' if needed
 X_train, X_test, y_train, y_test = split_data(X, y)
 
 # === 2. Train SVM model ===
-model = SVC(probability=True)  # Needed for ROC curve
+model = LinearSVC(class_weight='balance')  # Needed for ROC curve
 model.fit(X_train, y_train)
 
 # === 3. Make predictions ===
